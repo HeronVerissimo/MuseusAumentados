@@ -8,29 +8,18 @@
   <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
 </head>
 
-<body style="margin:0; overflow:hidden;">
-  <a-scene embedded vr-mode-ui="enabled: false"
-    arjs="sourceType: webcam; detectionMode: mono; patternRatio: 0.5; debugUIEnabled: false;" gesture-detector>
-    <a-entity camera></a-entity>
-
-    <!-- Hiro -->
-    <!-- <a-marker preset="hiro">
-      <a-entity class="tocavel" gesture-handler gltf-model="url(assets/Globo.glb)" scale="2.5 2.5 2.5"
-        position="0 0 0"></a-entity>
-    </a-marker> -->
-
-    <!-- Pattern back -->
-    <!-- <a-marker type="pattern" url="patts/pattern-back.patt">
-      <a-entity class="tocavel" gesture-handler gltf-model="url(assets/braseiro.glb)" scale="0.75 0.75 0.75"
-        rotation="270 0 0" position="0 0 0"></a-entity>
-    </a-marker> -->
-
-    <!-- Pattern A1 -->
+<body style="margin:0; overflow:hidden;"></body>
+<body>
+  <a-scene embedded arjs="sourceType: webcam;" gesture-detector>
+    <a-entity camera cursor="rayOrigin: mouse; fuse:false" raycaster="objects: .tocavel"></a-entity>
     <a-marker preset="hiro">
-      <a-entity class="tocavel" gesture-handler gltf-model="url(assets/sino.glb)" scale="1.75 1.75 1.75"
-        rotation="270 0 0" position="0 0 0"></a-entity>
-    </a-marker>
+      <a-entity class="tocavel" gesture-handler 
 
+        gltf-model="url(assests/sino.glb)" scale="2.5 2.5 2.5" position="0 0 0"
+        animation__spin="property: rotation; to: 0 360 0;  dur: 3000; easing: linear; 
+                        loop: true; autoplay: false; resumeEvents: mousedown; pauseEvents: mouseup">
+      </a-entity>
+    </a-marker>
   </a-scene>
 </body>
 
